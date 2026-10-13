@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bgMain: #F8FAFC;
+  --color-bgSoft: #EEF2F7;
+  --color-card: #FFFFFF;
+
+  --color-primary: #16A34A;
+  --color-secondary: #0EA5E9;
+  --color-accent: #F97316;
+
+  --color-textPrimary: #0F172A;
+  --color-textSecondary: #475569;
+  --color-textMuted: #94A3B8;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-bgMain);
+    color: var(--color-textPrimary);
+  }
+}
+
+@layer utilities {
+  .bg-global {
+    background-image: radial-gradient(circle at 1px 1px, rgba(226, 232, 240, 0.6) 1px, transparent 0),
+                      linear-gradient(135deg, #F8FAFC 0%, #EEF2F7 100%);
+    background-size: 40px 40px, 100% 100%;
+    background-attachment: fixed;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.2s ease-out;
+}
